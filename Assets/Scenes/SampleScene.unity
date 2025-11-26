@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 555610393}
   - component: {fileID: 555610392}
   - component: {fileID: 555610391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -487,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650587109}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,7 +502,7 @@ Transform:
   m_GameObject: {fileID: 650587108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.106, y: -0.559, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -689,20 +689,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e568bed313bd2843b2209bc1facb75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
-  jumpForce: 14
-  maxJumps: 2
-  jumpCutMultiplier: 0.5
-  jumpCoyoteTime: 0.2
-  jumpBufferTime: 0.2
-  gravityScale: 3
-  fallGravityMultiplier: 1.5
-  maxFallSpeed: 20
+  rb: {fileID: 1089677565}
   groundCheck: {fileID: 650587109}
-  groundRadius: 0.1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
 --- !u!70 &1089677570
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -769,7 +760,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1089677569}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnMove
+        m_MethodName: Move
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -801,7 +792,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1089677569}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJump
+        m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -867,7 +858,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1917476113
@@ -881,7 +872,7 @@ GameObject:
   - component: {fileID: 1917476116}
   - component: {fileID: 1917476115}
   - component: {fileID: 1917476114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1009,7 @@ GameObject:
   - component: {fileID: 1963297847}
   - component: {fileID: 1963297846}
   - component: {fileID: 1963297848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
